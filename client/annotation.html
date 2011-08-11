@@ -34,7 +34,21 @@
 </div>
 
 <script>
-    var currentAnnotation = new Array();
+    var innotation = {
+        annotationItems:new Array(),
+        addAnnotationItem:function(annot){
+            this.annotationItems.push(annot);
+        },
+        addTextAnnotation: function(text){
+            var annot = {
+                type: 'text',
+                text: text,
+                ts: new Date().getTime()
+            };
+            this.addAnnotationItem(annot);
+        },
+        
+    }; // end innotation class
     
     function showTextAnnotationCreator(){
         console.log("show text");
@@ -44,7 +58,7 @@
     function handleNewTextAnnotation(){
         console.log('new annotation');
         var text = $('.annot-text .text').val();
-        addNewAnnotation(text);
+        innotation.addTextAnnotation(text);
         $('.annot-text').hide();
     };
     function showAudioAnnotationCreator(){
@@ -70,16 +84,7 @@
 </script>
 
 <script>
-    function addNewAnnotation(text){
-        var annot = {
-            type: 'text',
-            text: text,
-            ts: new Date().getTime()
-        };
-        console.log('annotation ');
-        console.log(annot);
-        
-    };
+
 
 </script>
 </body>
