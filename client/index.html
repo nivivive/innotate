@@ -25,19 +25,15 @@
 						</audio>
 				</div>
 				<div class="annotate_text">
-					<form action="annotate_text.asp">
-						<input type="text" id="annotation" width="300px" value="Add your annotation..."></input> <br />
-						<input type="button" id="icon_picture" src="pictures/icon_picture.png"></input>
-						<input type="button" id="icon_link" src="pictures/icon_link.png"></input>
-						<input type="button" id="icon_voice" src="pictures/icon_voice.png"></input>
-					</form>
+						<input type="text" class="annotation" width="300px" value=""></input> <br />
+						<input type="button" class="icon_picture" src="pictures/icon_picture.png"></input>
+						<input type="button" class="icon_link" src="pictures/icon_link.png"></input>
+						<input type="button" class="icon_voice" src="pictures/icon_voice.png"></input>
 				</div>
 			</div>
 			<div class="right">
-				<form action="annotataion_submit.asp">
 					<input type="text" id="title" value="Title"> </input> <br />
-					<input type="textarea" id="annotation_transcript"> </input>
-				</form>
+                    <div class='annotation_transcript'></div>
 			</div>
 		</div>
 		<div class="footer">
@@ -45,12 +41,11 @@
 
     <script>
         $(document).ready(function() {
-        $('.annot-button-text').click(showTextAnnotationCreator);
         $('.annot-button-audio').click(showAudioAnnotationCreator);
         $('.annot-button-url').click(showURLAnnotationCreator);
         $('.annot-button-pic').click(showPictureAnnotationCreator);
 
-        $('.annot-text .text').change(handleNewTextAnnotation);
+        $('.annotate_text .annotation').change(handleNewTextAnnotation);
 
      });
 
