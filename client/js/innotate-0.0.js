@@ -10,7 +10,6 @@ var whichAV = "#myaudio";
 var whichAVId = whichAV.substr(1);
 var curAVDiv = null;
 
-
 var innotation = {
     annotationItems:new Array(),
     addAnnotationItem:function(annot){
@@ -18,13 +17,15 @@ var innotation = {
     },
     addTextAnnotation: function(text){
         var ts = getCurrentTime();
-        var annot = {
-            type: 'text',
-            text: text,
-            ts: ts
-        };
-        this.addAnnotationItem(annot);
-        showAnnotation(this.annotationItems);
+        if (ts){
+            var annot = {
+                type: 'text',
+                text: text,
+                ts: ts
+            };
+            this.addAnnotationItem(annot);
+            showAnnotation(this.annotationItems);
+        }
     },
     init: function(){
         $('.annot-button-audio').click(showAudioAnnotationCreator);
@@ -33,7 +34,9 @@ var innotation = {
         $('.annotate_text .annotation').change(handleNewTextAnnotation);
 
         $(whichAV).attr('class', 'show');
-        document.getElementById(whichAVId).play();
+//        document.getElementById(whichAVId).play();
+
+        showListPodcasts(playlist);
     }
 
 }; // end innotation class
@@ -58,7 +61,7 @@ function getCurrentTime () {
 //   console.log("whichAV: " + whichAV);
 //   console.log(" paused: " + $(whichAV).paused + "; ended: " + $(whichAV).ended);
    var div = document.getElementById(whichAVId);
-   if (!div.paused && !div.ended) {
+   if (!div.ended) { //!div.paused && 
 //       console.log("CurrentTime: " + div.currentTime);
        return div.currentTime;
    }
@@ -69,7 +72,28 @@ function getCurrentTime () {
 }
 
 
+function showListPodcasts(podcastItems){
+    var t = ''; // url type title
+    podcastItems.forEach(function(item, i){
+        console.log('element ' + item);
+        t = t + '<div class="podcast" id="podcast-'+i+'">' + item.title + ' </div>';
+    });
+    t = t+ "<script> $('.podcast').click(hasSelectedPodcast);</script>";
+    $('.podcast-list').html(t);
+};
 
+function hasSelectedPodcast(obj){
+    console.log('new podcast');
+    var pid = obj.currentTarget.id.replace('podcast-', '');
+    var podcast = playlist[pid];
+    var audioSource = document.getElementById('audio-mpeg');
+    var audio = document.getElementById(whichAVId);
+    audioSource.src = podcast.url;
+    audio.load();
+    console.log('has loaded ' + audioSource.src);
+//    $(whichAV + ' .mpeg').attr('src', );
+//    console.log($(whichAV + ' .mpeg').attr('src'));
+};
 function handleNewTextAnnotation(){
     console.log('new annotation');
     var text = $('.annotate_text .annotation').val();

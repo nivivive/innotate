@@ -3,6 +3,7 @@
 	<head>
 		<title> iNNOTATE </title>
 		<link rel="stylesheet" type="text/css" href="css/innotate-style.css" />
+        <script src="js/playlist.js"></script>
         <script src="js/jquery-1.6.2.min.js"> </script>
         <script src="js/innotate-0.0.js"></script>
 	</head>
@@ -12,6 +13,8 @@
 		</div>
 		<div class="content">
 			<div class="left">
+                 <div class="podcast-list"></div>
+                
 				<div class="audio" >
 					<div class="audio_details">
 					<table>
@@ -38,11 +41,11 @@
                         </video>
                         <audio class="hide" id="myaudio" controls preload="metadata">
                             <!-- http://www-mmsp.ece.mcgill.ca/documents/audioformats/wave/Samples.html -->
-                            <source type="audio/wav"  src="http://www-mmsp.ece.mcgill.ca/documents/audioformats/wave/Samples/AFsp/M1F1-Alaw-AFsp.wav"></source>
+                            <!--<source type="audio/wav" id="audio-wav"  src="http://www-mmsp.ece.mcgill.ca/documents/audioformats/wave/Samples/AFsp/M1F1-Alaw-AFsp.wav"></source>-->
                             <!-- http://www.largesound.com/ashborytour/sound/ -->
-                            <source type="audio/mpeg"  src="http://www.largesound.com/ashborytour/sound/brobob.mp3"></source>
+                            <source type="audio/mpeg" id="audio-mpeg" src="http://www.largesound.com/ashborytour/sound/brobob.mp3"></source>
                             <!-- http://www.openrepository.com/products/cms-integration/ogg-audio-example -->
-                            <source type="audio/ogg"  src="http://dspace.wijiti.com/i/testing/bitstream/123456789/16/1/06_-_Vivaldi_Summer_mvt_3_Presto_-_John_Harrison_violin.ogg"></source>
+                            <!--<source type="audio/ogg"  id="audio-ogg" src="http://dspace.wijiti.com/i/testing/bitstream/123456789/16/1/06_-_Vivaldi_Summer_mvt_3_Presto_-_John_Harrison_violin.ogg"></source>-->
                             Your browser does not support the <code>audio</code> element.
                         </audio>
 				</div>

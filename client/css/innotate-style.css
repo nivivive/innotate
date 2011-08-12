@@ -38,3 +38,12 @@
 p {
 	cellpadding: none;
 }
+
+.podcast{
+    border: 1px solid black;
+    padding: 2px;
+    margin: 5px;
+    position: relative;
+    width: 200px;
+    float: left;
+}
