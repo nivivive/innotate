@@ -18,11 +18,21 @@
 						<h6 class="audio_title"> Tech News Today</h6>
 						<p class="audio_added_date">08-10-2011</p>
 					</div>
-						<audio controls="controls">
-							<source src="podcasts/audio.ogg" type="audio/ogg" />
-							<source src="podcasts/audio.mp3" type="audio/mpeg" />
-							Your browser does not support the audio element.
-						</audio>
+                        <video style="display: none;" class="hide" id="myvideo" controls preload="metadata" tabindex="0">
+                            <source type="video/mp4" src="http://html5demos.com/assets/dizzy.mp4"></source>
+                            <source type="video/webm" src="http://html5demos.com/assets/dizzy.webm"></source>
+                            <source type="video/ogv" src="http://html5demos.com/assets/dizzy.ogv"></source>
+                            Your browser does not support the <code>video</code> element.
+                        </video>
+                        <audio class="hide" id="myaudio" controls preload="metadata">
+                            <!-- http://www-mmsp.ece.mcgill.ca/documents/audioformats/wave/Samples.html -->
+                            <source type="audio/wav"  src="http://www-mmsp.ece.mcgill.ca/documents/audioformats/wave/Samples/AFsp/M1F1-Alaw-AFsp.wav"></source>
+                            <!-- http://www.largesound.com/ashborytour/sound/ -->
+                            <source type="audio/mpeg"  src="http://www.largesound.com/ashborytour/sound/brobob.mp3"></source>
+                            <!-- http://www.openrepository.com/products/cms-integration/ogg-audio-example -->
+                            <source type="audio/ogg"  src="http://dspace.wijiti.com/i/testing/bitstream/123456789/16/1/06_-_Vivaldi_Summer_mvt_3_Presto_-_John_Harrison_violin.ogg"></source>
+                            Your browser does not support the <code>audio</code> element.
+                        </audio>
 				</div>
 				<div class="annotate_text">
 						<input type="text" class="annotation" style="width:295px;" value=""></input> <br />
@@ -43,12 +53,7 @@
 
     <script>
         $(document).ready(function() {
-        $('.annot-button-audio').click(showAudioAnnotationCreator);
-        $('.annot-button-url').click(showURLAnnotationCreator);
-        $('.annot-button-pic').click(showPictureAnnotationCreator);
-
-        $('.annotate_text .annotation').change(handleNewTextAnnotation);
-
+            innotation.init();
      });
 
     </script>
