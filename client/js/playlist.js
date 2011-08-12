@@ -23,7 +23,7 @@ var playlist = [{
  type: 'audio/mpeg',
  title: 'CoffeeGeek Podcast 065 - Vario Grinder'
 },{
- url: 'http://people.sc.fsu.edu/~jburkardt/data/mp4/cvt_cutoff_movie.mp4'
+ url: 'http://people.sc.fsu.edu/~jburkardt/data/mp4/cvt_cutoff_movie.mp4',
  type: 'video/mp4',
  title: 'The CVT Cutoff Movie'
 },{
