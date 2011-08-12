@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> iNNOTATE </title>
+		<link rel="stylesheet" type="text/css" href="css/innotate-style.css" />
+	</head>
+	<body>
+		<div class="header">
+				<img id="title" src="pictures/title.png" />
+		</div>
+		<div class="content">
+			<div class="left">
+				<div class="audio" >
+					<div class="audio_details>
+						<img id="audio_icon" src="" width="50px" height="50px" />
+						<h6 id="audio_title"><?php echo $audio_title; ?> </h6>
+						<p id="audio_added_date"><?php echo $audio_added_date; ?> </p>
+					</div>
+						<audio controls="controls">
+							<source src="podcasts/Kalimba.ogg" type="audio/ogg" />
+							<source src="podcasts/Kalimba.mp3" type="audio/mpeg" />
+							Your browser does not support the audio element.
+						</audio>
+				</div>
+				<div class="annotate_text">
+					<form action="annotate_text.asp">
+						<input type="text" id="annotation" width="300px" value="Add your annotation..."></input> <br />
+						<input type="button" id="icon_picture" src="pictures/icon_picture.png"></input>
+						<input type="button" id="icon_link" src="pictures/icon_link.png"></input>
+						<input type="button" id="icon_voice" src="pictures/icon_voice.png"></input>
+					</form>
+				</div>
+			</div>
+			<div class="right">
+				<form action="annotataion_submit.asp">
+					<input type="text" id="title" value="Title"> </input> <br />
+					<input type="textarea" id="annotation_transcript"> </input>
+				</form>
+			</div>
+		</div>
+		<div class="footer">
+		</div>
+	</body>
+</html>
