@@ -3,6 +3,8 @@
 	<head>
 		<title> iNNOTATE </title>
 		<link rel="stylesheet" type="text/css" href="css/innotate-style.css" />
+        <script src="js/jquery-1.6.2.min.js"> </script>
+        <script src="js/innotate-0.0.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -40,5 +42,18 @@
 		</div>
 		<div class="footer">
 		</div>
+
+    <script>
+        $(document).ready(function() {
+        $('.annot-button-text').click(showTextAnnotationCreator);
+        $('.annot-button-audio').click(showAudioAnnotationCreator);
+        $('.annot-button-url').click(showURLAnnotationCreator);
+        $('.annot-button-pic').click(showPictureAnnotationCreator);
+
+        $('.annot-text .text').change(handleNewTextAnnotation);
+
+     });
+
+    </script>
 	</body>
 </html>
