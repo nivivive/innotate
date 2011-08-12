@@ -24,3 +24,9 @@
 .annotation_transcript{
 	background-color: #D1D3D4;
 }
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
