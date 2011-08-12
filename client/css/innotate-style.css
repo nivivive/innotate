@@ -21,3 +21,9 @@
 	float: right;
 	height: 520px;
 }
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
