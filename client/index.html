@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> iNNOTATE </title>
+		<link rel="stylesheet" type="text/css" href="css/innotate-style.css" />
+        <script src="js/jquery-1.6.2.min.js"> </script>
+        <script src="js/innotate-0.0.js"></script>
+	</head>
+	<body>
+		<div class="header">
+				<img class="title" src="pictures/title.png" />
+		</div>
+		<div class="content">
+			<div class="left">
+				<div class="audio" >
+					<div class="audio_details">
+					<table>
+						<tr>
+							<td rowspan="2">
+								<img class="audio_icon" src="pictures/audio_icon.png" width="50px" height="50px" />
+							</td>
+							<th>
+								Tech News Today
+							</th>
+						</tr>
+						<tr>
+							<td valign=top>
+								08-10-2011
+							</td>
+						</tr>
+					</table>
+					</div>
+                        <video style="display: none;" class="hide" id="myvideo" controls preload="metadata" tabindex="0">
+                            <source type="video/mp4" src="http://html5demos.com/assets/dizzy.mp4"></source>
+                            <source type="video/webm" src="http://html5demos.com/assets/dizzy.webm"></source>
+                            <source type="video/ogv" src="http://html5demos.com/assets/dizzy.ogv"></source>
+                            Your browser does not support the <code>video</code> element.
+                        </video>
+                        <audio class="hide" id="myaudio" controls preload="metadata">
+                            <!-- http://www-mmsp.ece.mcgill.ca/documents/audioformats/wave/Samples.html -->
+                            <source type="audio/wav"  src="http://www-mmsp.ece.mcgill.ca/documents/audioformats/wave/Samples/AFsp/M1F1-Alaw-AFsp.wav"></source>
+                            <!-- http://www.largesound.com/ashborytour/sound/ -->
+                            <source type="audio/mpeg"  src="http://www.largesound.com/ashborytour/sound/brobob.mp3"></source>
+                            <!-- http://www.openrepository.com/products/cms-integration/ogg-audio-example -->
+                            <source type="audio/ogg"  src="http://dspace.wijiti.com/i/testing/bitstream/123456789/16/1/06_-_Vivaldi_Summer_mvt_3_Presto_-_John_Harrison_violin.ogg"></source>
+                            Your browser does not support the <code>audio</code> element.
+                        </audio>
+				</div>
+				<div class="annotate_text">
+						<input type="text" class="annotation" style="width:295px;" value=""></input> <br />
+						<button type="button" class="icon_picture"><img src="pictures/icon_picture.png" alt="icon_picture"></button>
+						<button type="button" class="icon_link"><img src="pictures/icon_link.png" alt="icon_link" /></button>
+						<button type="button" class="icon_voice"> <img src="pictures/icon_voice.png" alt="icon_voice" /></button>
+				</div>
+			</div>
+			<div class="right">
+				<input type="text" class="title" style="width: 100px;" value=" Title"> </input> 
+				<button type="button" class="submit" style="width:100px;">SUBMIT</button><br />
+				<div class='annotation_transcript' style="width: 208px;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			Copyrighted in 2011
+		</div>
+
+    <script>
+        $(document).ready(function() {
+            innotation.init();
+     });
+
+    </script>
+	</body>
+</html>

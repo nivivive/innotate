@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="js/jquery-1.6.2.min.js"> </script>
+
+    <style>
+
+        .annot-text{
+            display: none;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+
+<div>
+    --toolbar--
+    <div class='annot-button-text annot-button'>Text</div>
+    <div class='annot-button-audio annot-button'>Audio</div>
+    <div class='annot-button-url annot-button'>URL</div>
+    <div class='annot-button-pic annot-button'>Picture</div>
+
+    
+</div>
+
+<div class='annot-text'>
+    Enter text:
+    <input type="text" class='text'> </input>
+    <input type="button" name="OK" value="OK">
+</div>
+
+
+<div class='annot-current'>
+    --annotations--
+    <div class='annot-list'></div>
+</div>
+
+<script>
+    var innotation = {
+        annotationItems:new Array(),
+        addAnnotationItem:function(annot){
+            this.annotationItems.push(annot);
+        },
+        addTextAnnotation: function(text){
+            var annot = {
+                type: 'text',
+                text: text,
+                ts: new Date().getTime()
+            };
+            this.addAnnotationItem(annot);
+            showAnnotation(this.annotationItems);
+        },
+        
+    }; // end innotation class
+
+    function showAnnotation(annots){
+        var t = '';
+        annots.forEach(function(el){
+            t = t + '<div>' + el['text'] + '</div>';
+        });
+        $('.annot-current .annot-list').html(t);
+    };
+    
+    function showTextAnnotationCreator(){
+        console.log("show text");
+        $('.annot-text').show();
+    };
+
+    function handleNewTextAnnotation(){
+        console.log('new annotation');
+        var text = $('.annot-text .text').val();
+        innotation.addTextAnnotation(text);
+        $('.annot-text').hide();
+        $('.annot-text .text').val('');
+    };
+    function showAudioAnnotationCreator(){
+
+    };
+    function showURLAnnotationCreator(){
+
+    };
+    function showPictureAnnotationCreator(){
+
+    };
+    $(document).ready(function() {
+        $('.annot-button-text').click(showTextAnnotationCreator);
+        $('.annot-button-audio').click(showAudioAnnotationCreator);
+        $('.annot-button-url').click(showURLAnnotationCreator);
+        $('.annot-button-pic').click(showPictureAnnotationCreator);
+
+        $('.annot-text .text').change(handleNewTextAnnotation);
+        
+     });
+
+
+</script>
+
+<script>
+
+
+</script>
+</body>
+</html>
