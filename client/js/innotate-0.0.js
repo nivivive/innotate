@@ -25,17 +25,27 @@ var innotation = {
 }; // end innotation class
 
 function showAnnotation(annots){
-    var t = '';
+
+    var t = "<ul class='annotation-list'>";
+
+    // iterate through the array and dynamically generate the HTML
     annots.forEach(function(el){
-        t = t + '<div>' + el['text'] + '</div>';
+        t = t + "<li class='annotation'> \n\
+                  <div class='timestamp'>" + el.ts + "</div>" +
+                " <div class='annotation'>" + el.text + "</div>" +
+            "</li>" ;
     });
+    t = t + '</ul>';
     $('.annotation_transcript').html(t);
 };
+
 
 function showTextAnnotationCreator(){
     console.log("show text");
     $('.annot-text').show();
 };
+
+
 
 function handleNewTextAnnotation(){
     console.log('new annotation');
