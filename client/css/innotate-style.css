@@ -35,3 +35,6 @@
 	color: white;
 	font-weight: 400;
 }
+p {
+	cellpadding: none;
+}
