@@ -3,6 +3,8 @@
 	<head>
 		<title> iNNOTATE </title>
 		<link rel="stylesheet" type="text/css" href="css/innotate-style.css" />
+        <script src="js/jquery-1.6.2.min.js"> </script>
+        <script src="js/innotate-0.0.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -31,10 +33,22 @@
 			</div>
 			<div class="right">
 					<input type="text" class="title" value="Title"> </input> <br />
-					<input type="textarea" class="annotation_transcript"> </input>
+					<div class='annotation_transcript'></div>
 			</div>
 		</div>
 		<div class="footer">
 		</div>
+
+    <script>
+        $(document).ready(function() {
+        $('.annot-button-audio').click(showAudioAnnotationCreator);
+        $('.annot-button-url').click(showURLAnnotationCreator);
+        $('.annot-button-pic').click(showPictureAnnotationCreator);
+
+        $('.annotate_text .annotation').change(handleNewTextAnnotation);
+
+     });
+
+    </script>
 	</body>
 </html>
