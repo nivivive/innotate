@@ -43,16 +43,16 @@ var innotation = {
 
 function showAnnotation(annots){
 
-    var t = "<ul class='annotation-list'>";
+    var t = "<div class='annotation-list'>";
 
     // iterate through the array and dynamically generate the HTML
     annots.forEach(function(el){
-        t = t + "<li class='annotation'> \n\
-                  <div class='annotation time'>" + el.ts + "</div>" +
-                " <div class='annotation'>" + el.text + "</div>" +
-            "</li>" ;
+        t = t + "<div class='annotation'> \n\
+                  <span class='annotation time'>" + Math.round(el.ts*10)/10 + ": </span>" +
+                " <span class='annotation'>" + el.text + "</span>" +
+            "</div>" ;
     });
-    t = t + '</ul>';
+    t = t + '';
     $('.annotation_transcript').html(t);
 };
 
@@ -83,14 +83,14 @@ function showListPodcasts(podcastItems){
 };
 
 function hasSelectedPodcast(obj){
-    console.log('new podcast');
+//    console.log('new podcast');
     var pid = obj.currentTarget.id.replace('podcast-', '');
     var podcast = playlist[pid];
     var audioSource = document.getElementById('audio-mpeg');
     var audio = document.getElementById(whichAVId);
     audioSource.src = podcast.url;
     audio.load();
-    console.log('has loaded ' + audioSource.src);
+//    console.log('has loaded ' + audioSource.src);
 //    $(whichAV + ' .mpeg').attr('src', );
 //    console.log($(whichAV + ' .mpeg').attr('src'));
 };

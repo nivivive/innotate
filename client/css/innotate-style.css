@@ -34,7 +34,6 @@
 	background-color: #00AEEF;
 	color: white;
 	font-weight: 400;
-<<<<<<< HEAD
 }
 p {
 	cellpadding: none;
@@ -47,6 +46,8 @@ p {
     position: relative;
     width: 200px;
     float: left;
-=======
->>>>>>> 3db20238200bdf91f33e40717d564d5a5d67d2d2
+}
+/*.podcast-list{*/
+    /*width: 70%;*/
+    /*clear: both;*/
 }
