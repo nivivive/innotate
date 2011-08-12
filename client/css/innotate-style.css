@@ -30,3 +30,8 @@
 .show {
 	display: block;
 }
+.submit {
+	background-color: #00AEEF;
+	color: white;
+	font-weight: 400;
+}
