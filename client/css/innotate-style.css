@@ -37,6 +37,7 @@
 }
 p {
 	cellpadding: none;
+	font-weight: 400;
 }
 
 .podcast{
@@ -46,8 +47,4 @@ p {
     position: relative;
     width: 200px;
     float: left;
-}
-/*.podcast-list{*/
-    /*width: 70%;*/
-    /*clear: both;*/
 }
